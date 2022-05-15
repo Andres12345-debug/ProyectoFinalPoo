@@ -46,14 +46,9 @@ public class Operacion {
 		pn.setVisible(true);
 		dispose();
 		
-			
+			JOptionPane.showMessageDialog(null, "Tu contraseña es correcta");
 				
-				
-				
-
-				JOptionPane.showMessageDialog(null, "Tu contraseña es correcta");
-				
-				
+				//asd
 				
 				
 
