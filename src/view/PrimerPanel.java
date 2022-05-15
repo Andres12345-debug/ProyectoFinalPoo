@@ -39,51 +39,52 @@ public class PrimerPanel extends JPanel implements ActionListener {
 
 	//Fuentes
 	private Font fuente;
-	private Font fuenteNombre;
+	private Font fuenteDos;
 
 	//Botones
 	private JButton botonUno;
 	
 	//Eventos
 	private CustomEvent evento;
-	
+	private CustomEvent eventoDos;
 	//Variables
 	private String resultadoVista;
 	
 	//Método Constructor
 	public PrimerPanel() {
 		fuente = new Font("Berlin Sans FB", Font.BOLD, 20);
-		fuenteNombre = new Font("Berlin Sans FB", Font.BOLD, 14);
+		fuenteDos = new Font("Berlin Sans FB", Font.BOLD, 16);
 		setLayout(null);
 
-		etiquetaUno = new JLabel("LOG IN: ADMINISTRATIVOS");
-		etiquetaUno.setBounds(50, 50, 600, 90);
+		etiquetaUno = new JLabel("INICIAR SESIÓN");
+		etiquetaUno.setBounds(30, 20, 600, 90);
 		etiquetaUno.setFont(fuente);
 		add(etiquetaUno);
 		
 		etiquetaDos = new JLabel("Usuario:");
-		etiquetaDos.setBounds(255, 120, 600, 90);
-		etiquetaDos.setFont(fuenteNombre);
+		etiquetaDos.setBounds(45, 120, 600, 90);
+		etiquetaDos.setFont(fuenteDos);
 		add(etiquetaDos);
 		
 		contenidoPreguntaAdmin = new JTextField();
-		contenidoPreguntaAdmin.setBounds(250, 180, 160, 30);
+		contenidoPreguntaAdmin.setBounds(45, 180, 160, 30);
 		add(contenidoPreguntaAdmin);
 		
 		etiquetaTres = new JLabel("Contraseña:");
-		etiquetaTres.setBounds(255, 200, 600, 90);
-		etiquetaTres.setFont(fuenteNombre);
+		etiquetaTres.setBounds(45, 200, 600, 90);
+		etiquetaTres.setFont(fuenteDos);
 		add(etiquetaTres);
 		
 		contenidoClaveAdmin = new JTextField();
-		contenidoClaveAdmin.setBounds(250, 280, 160, 30);
+		contenidoClaveAdmin.setBounds(40, 280, 160, 30);
 		add(contenidoClaveAdmin);
 		
-		botonUno = new JButton("INGRESAR");
+		botonUno = new JButton("Ingresar");
 		botonUno.setBackground(Color.WHITE);
-		botonUno.setBounds(270,360,100,40);
-		botonUno.setActionCommand("Primer Boton");//pa que haga alguna monda
+		botonUno.setBounds(45,350,100,40);
+		botonUno.setFont(fuenteDos);
 		botonUno.addActionListener(this);
+		botonUno.setActionCommand("Primer Boton");//pa que haga alguna monda	
 		add(botonUno);
 		
 		resultado = new JLabel("Su resultado Es: ");
@@ -92,11 +93,22 @@ public class PrimerPanel extends JPanel implements ActionListener {
 	}
 	
 	//Métodos propios
+	public void probar(){
+	
+
+
+		
+
+
+
+
+
+	}
 	//Gráficos de imagen
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);//exception  controlan el entorno
 		try {
-			ImagenDos = ImageIO.read(new File("C:\\Users\\Acer\\Desktop\\uni\\programacion\\Proyecto final\\EsteSi.jpg"));
+			ImagenDos = ImageIO.read(new File("C:\\Users\\Acer\\Desktop\\uni\\programacion\\Proyecto final\\Swim.jpg"));
 		} catch (Exception e) {
 			JOptionPane.showMessageDialog(null, "IMAGEN NO ENCONTRADA ");
 		}
@@ -104,8 +116,12 @@ public class PrimerPanel extends JPanel implements ActionListener {
 	}
 
 	//metodo para resultado al ingresar los datos
-	public void mostrarResultado(int clave) {
-		resultadoVista = Integer.toString(clave);
+	public void mostrarResultado(int resultado) {
+		resultadoVista = Integer.toString(resultado);
+	}
+	public void mostrarResultadoUsuario(String resultadoUsuario){
+
+		resultadoVista = (resultadoUsuario);
 	}
 	
 	//Gets and Sets
@@ -117,23 +133,39 @@ public class PrimerPanel extends JPanel implements ActionListener {
 		this.evento = evento;
 	}
 
+	//Gets and Sets
+	public CustomEvent getEventoDos() {
+		return evento;
+	}
+
+	public void setEventoDos(CustomEvent eventoDos) {
+		this.eventoDos = eventoDos;
+	}
+
+	
+
+	
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		probar();
+		
 		int clave = Integer.parseInt(contenidoClaveAdmin.getText());
 		String usuario = (contenidoPreguntaAdmin.getText());
 		
+		
 		resultado.setText(resultadoVista);
-		evento.retornoClave(clave,usuario);
+		
 		resultado.enable();
 		
 		contenidoClaveAdmin.setText("");
 		contenidoPreguntaAdmin.setText("");
-	
-		if(e.getSource() == botonUno) {	
-			JOptionPane.showMessageDialog(botonUno, "funciona");
-		}
-			
-		JOptionPane.showMessageDialog(null, "asd");
+		
+
 	}
 
+	
+		
 }
+
+
+

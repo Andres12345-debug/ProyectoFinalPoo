@@ -7,22 +7,17 @@ import view.IOManager;
 
 public class Controller implements CustomEvent{
 	//Declaración de variables
+	
 	private CustomEventRespons objetoRespuesta;
-	private Operacion objetoOperacion;
+	Operacion objetoOperacion = new Operacion();
+
 	
 	//Método Constructor
 	public Controller(){
-		objetoOperacion = new Operacion();
+		
 	}
 	
 	//Métodos propios
-	@Override
-	public void retornoClave(int clave, String usuario) {
-		int  objetoRespuesta = objetoOperacion.realizarOperaciones(clave, usuario);
-		
-	}
-
-	//Gets and Sets
 	public CustomEventRespons getObjetoRespuesta() {
 		return objetoRespuesta;
 	}
@@ -31,10 +26,31 @@ public class Controller implements CustomEvent{
 		this.objetoRespuesta = objetoRespuesta;
 	}
 
+
+	
+
+	
+
+		
+	
+
+	@Override
+	public void retornoSuma(int primerNumero) {
+
+		// TODO Auto-generated method stub
+		int respuestaModelo = objetoOperacion.realizacionOperaciones(primerNumero );
+
+		objetoRespuesta.respuesta(respuestaModelo);
+		// TODO Auto-generated method stub
+		
+	}
+
 	//Método main
 	public void init() {
 		IOManager objetoIOManager = new IOManager();
 		objetoIOManager.setVisible(true);
 	}
+	
+	
 
 }

@@ -2,6 +2,7 @@ package view;
 
 public interface CustomEventRespons {
 	
-	public void respuesta(int clave);
+	public void respuesta(int resultado);
+	
 
 }
