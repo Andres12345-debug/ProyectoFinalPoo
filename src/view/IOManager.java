@@ -50,7 +50,7 @@ public class IOManager extends JFrame implements CustomEventRespons {
 		panelTres= new TercerPanel();
 		panelCuatro = new CuartoPanel();
 		
-		pestanas.add("Panel LOG", new PrimerPanel());
+		pestanas.add("Log In", new PrimerPanel());
 		add(pestanas);	
 		pestanas.add("panelDos", new SegundoPanel());
 		add(pestanas);	
