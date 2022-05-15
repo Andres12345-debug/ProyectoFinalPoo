@@ -18,56 +18,50 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 
 import controll.Controller;
-
-
+/*
+ * Autor: Iván Monsalve | Julián Montañez
+ * Descripción: Componente gráfico SwimSoft
+ * Fecha: 14/05/22
+ */
 public class PrimerPanel extends JPanel implements ActionListener {
-
-	//panel
-	private JPanel miPanel;
+	//Declaración de Variables
+	//Imágenes
 	private Image ImagenDos;
-	
-	//etiquetas
+
+	//Etiquetas
 	private JLabel etiquetaUno;
 	private JLabel etiquetaDos;
 	private JLabel etiquetaTres;
 	private JLabel resultado;//es una prueba
 	
-	//contenidos
+	//Cajas de texto
 	private JTextField contenidoPreguntaAdmin;
 	private JTextField contenidoClaveAdmin;
-	
-	//variables fuentes
+
+	//Fuentes
 	private Font fuente;
 	private Font fuenteNombre;
-	private Font fuenteBoton;
-	
-	//BOTONES
+
+	//Botones
 	private JButton botonUno;
 	
-	//eventos Custom
+	//Eventos
 	private CustomEvent evento;
-	//variables 
+	
+	//Variables
 	private String resultadoVista;
 	
-	
-	
-	
-	
-	
+	//Método Constructor
 	public PrimerPanel() {
 		fuente = new Font("Times New Roman",Font.BOLD,33);
 		fuenteNombre = new Font("Times New Roman",Font.BOLD,15);
-		fuenteBoton = new Font("Times New Roman",Font.BOLD,15);
 		setLayout(null);
-		
 		setBorder(BorderFactory.createTitledBorder("REGISTRO"));
 
-		
 		etiquetaUno = new JLabel("LOG DE ACCESO ADMINISTRATIVO");
 		etiquetaUno.setBounds(50, 50, 600, 90);
 		etiquetaUno.setFont(fuente);
 		add(etiquetaUno);
-		
 		
 		etiquetaDos = new JLabel("ESCRIBE TU USARIO");
 		etiquetaDos.setBounds(255, 120, 600, 90);
@@ -78,7 +72,7 @@ public class PrimerPanel extends JPanel implements ActionListener {
 		contenidoPreguntaAdmin.setBounds(250, 180, 160, 30);
 		add(contenidoPreguntaAdmin);
 		
-		etiquetaTres = new JLabel("ESCRIBE TU CONTRASE�A");
+		etiquetaTres = new JLabel("ESCRIBE TU CONTRASE�A");
 		etiquetaTres.setBounds(255, 200, 600, 90);
 		etiquetaTres.setFont(fuenteNombre);
 		add(etiquetaTres);
@@ -96,46 +90,33 @@ public class PrimerPanel extends JPanel implements ActionListener {
 		
 		resultado = new JLabel("Su resultado Es: ");
 		resultado.setBounds(8, 90, 200, 50);
-		add(resultado);
-
-		
-		
+		add(resultado);	
 	}
 	
-	
-	//imagen
-	
+	//Métodos propios
+	//Gráficos de imagen
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);//exception  controlan el entorno
 		try {
-
 			ImagenDos = ImageIO.read(new File("C:\\Users\\Acer\\Desktop\\uni\\programacion\\Proyecto final\\EsteSi.jpg"));
-
 		} catch (Exception e) {
 			JOptionPane.showMessageDialog(null, "IMAGEN NO ENCONTRADA ");
-
 		}
 		g.drawImage(ImagenDos, 0, 0, null);//movemos imagen
-
 	}
 
 	//metodo para resultado al ingresar los datos
 	public void mostrarResultado(int clave) {
 		resultadoVista = Integer.toString(clave);
-		
-		
 	}
-	
 	
 	public CustomEvent getEvento() {
 		return evento;
 	}
 
-
 	public void setEvento(CustomEvent evento) {
 		this.evento = evento;
 	}
-
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -146,27 +127,14 @@ public class PrimerPanel extends JPanel implements ActionListener {
 		evento.retornoClave(clave,usuario);
 		resultado.enable();
 		
-		
 		contenidoClaveAdmin.setText("");
 		contenidoPreguntaAdmin.setText("");
-		
-		
-		
-		if(e.getSource() == botonUno) {
-			
+	
+		if(e.getSource() == botonUno) {	
 			JOptionPane.showMessageDialog(botonUno, "funciona");
-			
-		
-				
-			}
-			
-
+		}
 			
 		JOptionPane.showMessageDialog(null, "asd");
-		}
-		
-		// TODO Auto-generated method stub
-		
-	
+	}
 
 }
