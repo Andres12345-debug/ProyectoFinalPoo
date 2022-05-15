@@ -19,6 +19,7 @@ public class Controller implements CustomEvent{
 	@Override
 	public void retornoClave(int clave, String usuario) {
 		int  objetoRespuesta = objetoOperacion.realizarOperaciones(clave, usuario);
+		
 	}
 
 	//Gets and Sets

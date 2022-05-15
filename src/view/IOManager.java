@@ -33,6 +33,9 @@ public class IOManager extends JFrame implements CustomEventRespons {
 		
 		pestanas.add("Panel LOG", new PrimerPanel());
 		add(pestanas);	
+		pestanas.add("panelDos", new SegundoPanel());
+		add(pestanas);	
+
 	}
 
 	@Override

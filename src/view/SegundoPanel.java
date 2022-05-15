@@ -15,9 +15,11 @@ public class SegundoPanel extends JPanel implements ActionListener {
 		etiquetaUno.setBounds(8, 10, 200, 50);
 		add(etiquetaUno);
 
+
 		
 		
 	}
+	
 	
 	@Override
 	
