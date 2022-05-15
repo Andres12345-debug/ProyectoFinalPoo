@@ -14,7 +14,6 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 
 import controll.Controller;
@@ -53,17 +52,16 @@ public class PrimerPanel extends JPanel implements ActionListener {
 	
 	//Método Constructor
 	public PrimerPanel() {
-		fuente = new Font("Times New Roman",Font.BOLD,33);
-		fuenteNombre = new Font("Times New Roman",Font.BOLD,15);
+		fuente = new Font("Berlin Sans FB", Font.BOLD, 20);
+		fuenteNombre = new Font("Berlin Sans FB", Font.BOLD, 14);
 		setLayout(null);
-		setBorder(BorderFactory.createTitledBorder("REGISTRO"));
 
-		etiquetaUno = new JLabel("LOG DE ACCESO ADMINISTRATIVO");
+		etiquetaUno = new JLabel("LOG IN: ADMINISTRATIVOS");
 		etiquetaUno.setBounds(50, 50, 600, 90);
 		etiquetaUno.setFont(fuente);
 		add(etiquetaUno);
 		
-		etiquetaDos = new JLabel("ESCRIBE TU USARIO");
+		etiquetaDos = new JLabel("Usuario:");
 		etiquetaDos.setBounds(255, 120, 600, 90);
 		etiquetaDos.setFont(fuenteNombre);
 		add(etiquetaDos);
@@ -72,7 +70,7 @@ public class PrimerPanel extends JPanel implements ActionListener {
 		contenidoPreguntaAdmin.setBounds(250, 180, 160, 30);
 		add(contenidoPreguntaAdmin);
 		
-		etiquetaTres = new JLabel("ESCRIBE TU CONTRASE�A");
+		etiquetaTres = new JLabel("Contraseña:");
 		etiquetaTres.setBounds(255, 200, 600, 90);
 		etiquetaTres.setFont(fuenteNombre);
 		add(etiquetaTres);
@@ -110,6 +108,7 @@ public class PrimerPanel extends JPanel implements ActionListener {
 		resultadoVista = Integer.toString(clave);
 	}
 	
+	//Gets and Sets
 	public CustomEvent getEvento() {
 		return evento;
 	}
