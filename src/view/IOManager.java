@@ -16,7 +16,7 @@ public class IOManager extends JFrame implements CustomEventRespons{
 	SegundoPanel panelDos;
 	TercerPanel panelTres;
 	CuartoPanel panelCuatro;
-	JTabbedPane pestañas;
+	JTabbedPane pestaï¿½as;
 	
 	
 	public IOManager() {
@@ -39,7 +39,7 @@ public class IOManager extends JFrame implements CustomEventRespons{
 	private void iniciarComponentes() {
 		
 		
-		pestañas = new JTabbedPane();
+		pestaï¿½as = new JTabbedPane();
 		panelUno = new PrimerPanel();
 		
 		
@@ -49,13 +49,13 @@ public class IOManager extends JFrame implements CustomEventRespons{
 		
 		panelCuatro = new CuartoPanel();
 		
-		pestañas.add("Panel LOG", new PrimerPanel());
+		pestaï¿½as.add("Panel LOG", new PrimerPanel());
 		
-//		pestañas.add("panel Dos", new SegundoPanel());
+//		pestaï¿½as.add("panel Dos", new SegundoPanel());
 		
 		
 		
-		add(pestañas);
+		add(pestaï¿½as);
 		
 		
 		
