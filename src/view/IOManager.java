@@ -1,49 +1,36 @@
 package view;
 
-import java.awt.Panel;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.JTabbedPane;
+import java.awt.*;
+import javax.swing.*;
 
 import controll.Controller;
 
+/*
+ * Autor: Iván Monsalve | Julián Montañez
+ * Descripción: Componente gráfico SwimSoft
+ * Fecha: 14/05/22
+ */
 
-
-public class IOManager extends JFrame implements CustomEventRespons{
-
-	PrimerPanel panelUno;
-	SegundoPanel panelDos;
-	TercerPanel panelTres;
-	CuartoPanel panelCuatro;
-	JTabbedPane pestanas;
+public class IOManager extends JFrame implements CustomEventRespons {
+	//Declaración de Variables
+	private PrimerPanel panelUno;
+	private SegundoPanel panelDos;
+	private TercerPanel panelTres;
+	private CuartoPanel panelCuatro;
+	private JTabbedPane pestanas;
 	
-	
+	//Método Constructor
 	public IOManager() {
-		
 		setTitle("PROYECTO PISCINA 1.1");
 		setSize(700,600);
-		
 		setLocationRelativeTo(null); 
-		
-		
 	
-		iniciarComponentes();
-		
-	
-		
-		
-		
-		
+		iniciarComponentes();	
 	}
+
 	private void iniciarComponentes() {
-		
-		
 		pestanas = new JTabbedPane();
 		panelUno = new PrimerPanel();
-		
-		
-		
 		panelDos = new SegundoPanel();
 		panelTres= new TercerPanel();
 		
