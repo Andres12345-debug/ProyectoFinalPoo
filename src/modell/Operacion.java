@@ -7,7 +7,7 @@ package modell;
  */
 public class Operacion {
 	//Declaracion de variables 
-	private int resupuestaClave;
+	private int respuestaClave;
 
 	//Método Constructor
 	public Operacion() {
