@@ -1,9 +1,9 @@
 package view;
 
 public interface CustomEvent {
+    public void retornarLogIn(String usuario, String contraseña);
 
-
-public void retornoSuma(int primerNumero);
-	
+    public void retornoImpresion(String nombre, String apellido);
 
 }
+

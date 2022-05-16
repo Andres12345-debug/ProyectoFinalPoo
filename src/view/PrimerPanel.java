@@ -46,7 +46,7 @@ public class PrimerPanel extends JPanel implements ActionListener {
 	
 	//Eventos
 	private CustomEvent evento;
-	private CustomEvent eventoDos;
+	
 	//Variables
 	private String resultadoVista;
 	
@@ -65,15 +65,15 @@ public class PrimerPanel extends JPanel implements ActionListener {
 		etiquetaDos.setBounds(45, 120, 600, 90);
 		etiquetaDos.setFont(fuenteDos);
 		add(etiquetaDos);
-		
-		contenidoPreguntaAdmin = new JTextField();
-		contenidoPreguntaAdmin.setBounds(45, 180, 160, 30);
-		add(contenidoPreguntaAdmin);
-		
+
 		etiquetaTres = new JLabel("Contraseña:");
 		etiquetaTres.setBounds(45, 200, 600, 90);
 		etiquetaTres.setFont(fuenteDos);
 		add(etiquetaTres);
+		
+		contenidoPreguntaAdmin = new JTextField();
+		contenidoPreguntaAdmin.setBounds(45, 180, 160, 30);
+		add(contenidoPreguntaAdmin);
 		
 		contenidoClaveAdmin = new JTextField();
 		contenidoClaveAdmin.setBounds(40, 280, 160, 30);
@@ -92,18 +92,11 @@ public class PrimerPanel extends JPanel implements ActionListener {
 		add(resultado);	
 	}
 	
-	//Métodos propios
-	public void probar(){
-	
-
-
-		
-
-
-
-
+	public void mostrarResultadoLogIn(Boolean resultadoLogIn) {
+		String resultadoVista = resultadoLogIn.toString();
 
 	}
+
 	//Gráficos de imagen
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);//exception  controlan el entorno
@@ -113,15 +106,6 @@ public class PrimerPanel extends JPanel implements ActionListener {
 			JOptionPane.showMessageDialog(null, "IMAGEN NO ENCONTRADA ");
 		}
 		g.drawImage(ImagenDos, 0, 0, null);//movemos imagen
-	}
-
-	//metodo para resultado al ingresar los datos
-	public void mostrarResultado(int resultado) {
-		resultadoVista = Integer.toString(resultado);
-	}
-	public void mostrarResultadoUsuario(String resultadoUsuario){
-
-		resultadoVista = (resultadoUsuario);
 	}
 	
 	//Gets and Sets
@@ -133,38 +117,20 @@ public class PrimerPanel extends JPanel implements ActionListener {
 		this.evento = evento;
 	}
 
-	//Gets and Sets
-	public CustomEvent getEventoDos() {
-		return evento;
-	}
-
-	public void setEventoDos(CustomEvent eventoDos) {
-		this.eventoDos = eventoDos;
-	}
-
-	
-
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		probar();
-		
-		int clave = Integer.parseInt(contenidoClaveAdmin.getText());
-		String usuario = (contenidoPreguntaAdmin.getText());
-		
-		
-		resultado.setText(resultadoVista);
-		
-		resultado.enable();
-		
-		contenidoClaveAdmin.setText("");
-		contenidoPreguntaAdmin.setText("");
-		
-
+		if(e.getActionCommand().equals(botonUno.getActionCommand())) {
+			String datosUsuario = contenidoPreguntaAdmin.getText();
+			String datosContraseña = contenidoClaveAdmin.getText();
+			
+			evento.retornarLogIn(datosUsuario, datosContraseña);
+			JOptionPane.showMessageDialog(null, resultadoVista);
+			contenidoPreguntaAdmin.setText(" ");
+			contenidoClaveAdmin.setText(" ");
+		}
 	}
-
 	
-		
 }
 
 

@@ -7,50 +7,44 @@ import view.IOManager;
 
 public class Controller implements CustomEvent{
 	//Declaración de variables
-	
-	private CustomEventRespons objetoRespuesta;
-	Operacion objetoOperacion = new Operacion();
-
+	private Operacion objetoOperaciones;
+	private CustomEventRespons eventoRespuesta;
 	
 	//Método Constructor
 	public Controller(){
-		
+		objetoOperaciones = new Operacion();
 	}
 	
 	//Métodos propios
-	public CustomEventRespons getObjetoRespuesta() {
-		return objetoRespuesta;
-	}
-
-	public void setObjetoRespuesta(CustomEventRespons objetoRespuesta) {
-		this.objetoRespuesta = objetoRespuesta;
-	}
-
-
-	
-
-	
-
-		
-	
-
 	@Override
-	public void retornoSuma(int primerNumero) {
+	public void retornarLogIn(String usuario, String contraseña) {
+		Boolean resultadoLogIn = objetoOperaciones.validarDatos(usuario, contraseña);
+		eventoRespuesta.respuestaResultadoLogIn(resultadoLogIn);
+	}
 
-		// TODO Auto-generated method stub
-		int respuestaModelo = objetoOperacion.realizacionOperaciones(primerNumero );
+	//Gets and Sets
+	public CustomEventRespons getEventoRespuesta() {
+		return eventoRespuesta;
+	}
 
-		objetoRespuesta.respuesta(respuestaModelo);
+	public void setEventoRespuesta(CustomEventRespons eventoRespuesta) {
+		this.eventoRespuesta = eventoRespuesta;
+	}
+	@Override
+	public void retornoImpresion(String nombre, String apellido) {
+		//int respuestaModelo = objetoOperaciones.realizarValidacion(String nombre, String apellido);
+		//eventoRespuesta.respuestaPanelDos(respuestaModelo);
+
 		// TODO Auto-generated method stub
 		
 	}
+
 
 	//Método main
 	public void init() {
 		IOManager objetoIOManager = new IOManager();
 		objetoIOManager.setVisible(true);
 	}
-	
-	
 
+	
 }

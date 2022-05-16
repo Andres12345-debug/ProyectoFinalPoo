@@ -1,6 +1,6 @@
 package modell;
 import view.PrimerPanel;
-import view.Prueba;
+//import view.Prueba;
 import view.SegundoPanel;
 
 import javax.lang.model.util.SimpleTypeVisitor14;
@@ -15,71 +15,37 @@ import javax.swing.plaf.PanelUI;
  */
 public class Operacion {
 	//Declaracion de variables 
-
-	int resultado ;
-	private Prueba panelPrueba;
+	Boolean resultadoLogIn;
+	
+	//private Prueba panelPrueba;
 	private JPanel panelUno;
+	private String resultado;
 
 	//Método Constructor
 	public Operacion() {
 		panelUno = new PrimerPanel();
-		panelPrueba = new Prueba();
-
-		
-		
-
-
+		resultadoLogIn = false;
  	}
 
 	//Métodos propios
-	
-	
-	
-	public int realizacionOperaciones(int numeroUno) {
-	
-		int contraseñaValidad = 123;
-		if(numeroUno == contraseñaValidad){
-	
-        PrimerPanel pn = new PrimerPanel();
-		
-		
-		pn.setVisible(true);
-		dispose();
-		
-			JOptionPane.showMessageDialog(null, "Tu contraseña es correcta");
-				
-				//asd
-				
-				
-
-				
-				
-
-				
-				
-		
-				
-				
-				
-	
-	
-	
-			}else{
-	
-				JOptionPane.showMessageDialog(null, "Tu contraseña es Incorrecta");
-				
-	
-			}
-		
-		
-		
-		
-		return numeroUno;
+	public Boolean validarDatos(String usuario, String contraseña) {
+		if(usuario == "admin" && contraseña == "admin123") {
+			resultadoLogIn = true;
+		} else {
+			resultadoLogIn = false;
+		}
+		return resultadoLogIn;
 	}
 
-	private void dispose() {
+	public String realizarValidacion(String nombre, String apellido){
+
+		resultado = "asd"+nombre+apellido;
+
+		return resultado;
+
 	}
-	}
+	
+}
 
 
 
