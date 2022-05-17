@@ -41,7 +41,9 @@ public class IOManager extends JFrame implements CustomEventRespons {
 		panelDos = new SegundoPanel();
 		((SegundoPanel)panelDos).setEvento(objetoControlador);
 		panelTres= new TercerPanel();
+
 		panelCuatro = new CuartoPanel();
+
 		
 		pestanas.add("Log In", new PrimerPanel());
 		add(pestanas);
@@ -49,8 +51,12 @@ public class IOManager extends JFrame implements CustomEventRespons {
 		pestanas.add("ACCESO", new SegundoPanel());
 		add(pestanas);	
 
-		pestanas.add("IMPRESION", new TercerPanel());
+		pestanas.add("TIENDA//QUIOSCO", new TercerPanel());
 		add(pestanas);
+
+		pestanas.add("CIERRE CAJA", new CuartoPanel());
+		add(pestanas);
+
 
 
 	}
