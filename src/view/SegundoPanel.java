@@ -181,12 +181,9 @@ public class SegundoPanel extends JPanel implements ActionListener {
 		g.drawRect(30, 30, 100, 30);//rectangulo g 
 		
 		try {
-			
-			ImagenDos = ImageIO.read(new File("C:\\Users\\Acer\\Desktop\\uni\\programacion\\Proyecto final\\panelDos.jpg"));
-
+			//ImagenDos = ImageIO.read(new File("C:\\Users\\Acer\\Desktop\\uni\\programacion\\Proyecto final\\panelDos.jpg"));
+			ImagenDos = ImageIO.read(new File("C:\\Users\\ivan\\Downloads\\PanelDos.jpeg"));
 			super.paintComponent(g);//herencia para poner color en g
-
-		
 		} catch (Exception e) {
 			JOptionPane.showMessageDialog(null, "IMAGEN NO ENCONTRADA ");
 		}
