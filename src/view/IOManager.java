@@ -38,27 +38,42 @@ public class IOManager extends JFrame implements CustomEventRespons {
 
 		panelUno = new PrimerPanel();
 		((PrimerPanel)panelUno).setEvento(objetoControlador);
-		pestanas.add("Log In", new PrimerPanel());
+		pestanas = new JTabbedPane();
+		pestanas.add("Log In", ((PrimerPanel)panelUno));
 		add(pestanas);
 
 		panelDos = new SegundoPanel();
 		((SegundoPanel)panelDos).setEvento(objetoControlador);
-		pestanas.add("ACCESO", new SegundoPanel());
+		pestanas.add("ACCESO", ((SegundoPanel)panelDos));
 		add(pestanas);
-
 		
 		panelTres= new TercerPanel();
 		//((TercerPanel)panelTres).setEvento(objetoControlador);
-		pestanas.add("TIENDA//QUIOSCO", new TercerPanel());
+		pestanas.add("TIENDA//QUIOSCO", ((TercerPanel)panelTres));
 		add(pestanas);
 
 		panelCuatro = new CuartoPanel();
 		//((CuartoPanel)panelCuatro).setEvento(objetoControlador);
-		pestanas.add("CIERRE CAJA", new CuartoPanel());
+		pestanas.add("CIERRE CAJA", ((CuartoPanel)panelCuatro));
 		add(pestanas);
 	}
 
 	//Métodos propios
+	/*
+	public static void setEnableContainer(Container c, boolean band) {
+		Component[] components = c.getComponents();
+		c.setEnabled(band);
+		for(int i = 0; i < components.length; i++) {            
+			components[i].setEnabled(band);
+		 	if(components[i] instanceof Container){
+		  		setEnableContainer((Container)components[i], band);
+		 	} 
+		}
+		SwingUtils.setEnableContainer(SegundoPanel, true);        
+	} 
+*/
+	
+
 	@Override
 	public void respuestaResultadoLogIn(boolean resultadoLogIn) {
 		((PrimerPanel)panelUno).mostrarResultadoLogIn(resultadoLogIn);
@@ -70,8 +85,6 @@ public class IOManager extends JFrame implements CustomEventRespons {
 		// TODO Auto-generated method stub
 		
 	}
-
-	
 
 }
 
