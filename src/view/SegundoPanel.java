@@ -202,11 +202,15 @@ public class SegundoPanel extends JPanel implements ActionListener {
 	
 		String nombre = (contenidoNombre.getText());
 		String apellido =(contenidoApellido.getText());
-		evento.retornoImpresion(nombre, apellido);
+		evento.retornarImpresionPersonas(nombre, apellido);
 		resultado.setText(resultadoVista);
 
 		contenidoNombre.setText(" ");
 		contenidoApellido.setText(" ");
+	}
+
+	public void mostrarResultadoRegistro(String nombre, String apellido) {
+		String resultadoVista = nombre.toString() + apellido.toString();;
 	}
 
 		

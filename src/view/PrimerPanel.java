@@ -126,7 +126,7 @@ public class PrimerPanel extends JPanel implements ActionListener {
 			String datosContraseña = contenidoClaveAdmin.getText();
 			
 			evento.retornarLogIn(datosUsuario, datosContraseña);
-			JOptionPane.showMessageDialog(null, resultadoVista);
+			JOptionPane.showMessageDialog(null, "Has ingresado a nuestro sistema.");
 			contenidoPreguntaAdmin.setText(" ");
 			contenidoClaveAdmin.setText(" ");
 		}

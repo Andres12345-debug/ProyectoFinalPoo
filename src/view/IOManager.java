@@ -19,7 +19,6 @@ public class IOManager extends JFrame implements CustomEventRespons {
 	private TercerPanel panelTres;
 	private CuartoPanel panelCuatro;
 	private JTabbedPane pestanas;
-	private JPanel panelPrueba;
 
 	private Controller objetoControlador;
 	
@@ -61,30 +60,20 @@ public class IOManager extends JFrame implements CustomEventRespons {
 	}
 
 	//Métodos propios
-	/*
-	public static void setEnableContainer(Container c, boolean band) {
-		Component[] components = c.getComponents();
-		c.setEnabled(band);
-		for(int i = 0; i < components.length; i++) {            
-			components[i].setEnabled(band);
-		 	if(components[i] instanceof Container){
-		  		setEnableContainer((Container)components[i], band);
-		 	} 
-		}
-		SwingUtils.setEnableContainer(SegundoPanel, true);        
-	} 
-*/
-	
 
 	@Override
 	public void respuestaResultadoLogIn(boolean resultadoLogIn) {
 		((PrimerPanel)panelUno).mostrarResultadoLogIn(resultadoLogIn);
-		//System.out.println("El resultado de la suma está en la vista " + resultadoSuma);
+		if(resultadoLogIn == true) {
+			pestanas.setEnabledAt(pestanas.indexOfComponent(panelDos),true);
+		} else{
+			pestanas.setEnabledAt(pestanas.indexOfComponent(panelDos),false);
+		}
 	}
 
 	@Override
-	public void respuestaPanelDos(String nombre, String apellido) {
-		// TODO Auto-generated method stub
+	public void respuestaRegistroPersonas(String nombre, String apellido) {
+		((SegundoPanel)panelDos).mostrarResultadoRegistro(nombre, apellido);
 		
 	}
 

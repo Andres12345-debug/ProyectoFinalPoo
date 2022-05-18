@@ -21,7 +21,7 @@ public class Operacion {
 	
 	//private Prueba panelPrueba;
 	private JPanel panelUno;
-	private String resultado;
+	private String mensajeInscripcion;
 
 	//Método Constructor
 	public Operacion() {
@@ -29,6 +29,7 @@ public class Operacion {
 		resultadoLogIn = false;
 		caracterUsuario = "admin";
 		caracterContraseña = "admin123";
+		mensajeInscripcion = "";
  	}
 
 	//Métodos propios
@@ -41,9 +42,9 @@ public class Operacion {
 		return resultadoLogIn;
 	}
 
-	public String realizarValidacion(String nombre, String apellido){
-		resultado = "asd"+nombre+apellido;
-		return resultado;
+	public String realizarValidacionRegistro(String nombre, String apellido){
+		mensajeInscripcion = nombre + apellido;
+		return mensajeInscripcion;
 	}
 	
 }

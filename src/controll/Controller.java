@@ -25,9 +25,9 @@ public class Controller implements CustomEvent{
 	}
 
 	@Override
-	public void retornoImpresion(String nombre, String apellido) {
-		String resultadoImpresion = objetoOperaciones.realizarValidacion(nombre, apellido);
-		eventoRespuesta.respuestaPanelDos(resultadoImpresion, resultadoImpresion);
+	public void retornarImpresionPersonas(String nombre, String apellido) {
+		String resultadoImpresion = objetoOperaciones.realizarValidacionRegistro(nombre, apellido);
+		eventoRespuesta.respuestaRegistroPersonas(resultadoImpresion, resultadoImpresion);
 	}
 
 	//Gets and Sets
