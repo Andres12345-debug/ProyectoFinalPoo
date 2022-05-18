@@ -15,7 +15,9 @@ import javax.swing.plaf.PanelUI;
  */
 public class Operacion {
 	//Declaracion de variables 
-	Boolean resultadoLogIn;
+	private Boolean resultadoLogIn;
+	private String caracterUsuario;
+	private String caracterContraseña;
 	
 	//private Prueba panelPrueba;
 	private JPanel panelUno;
@@ -25,11 +27,13 @@ public class Operacion {
 	public Operacion() {
 		panelUno = new PrimerPanel();
 		resultadoLogIn = false;
+		caracterUsuario = "admin";
+		caracterContraseña = "admin123";
  	}
 
 	//Métodos propios
-	public Boolean validarDatos(String usuario, String contraseña) {
-		if(usuario == "admin" && contraseña == "admin123") {
+	public boolean validarDatos(String usuario, String contraseña) {
+		if(usuario.equals(caracterUsuario) == true && contraseña.equals(caracterContraseña) == true) {
 			resultadoLogIn = true;
 		} else {
 			resultadoLogIn = false;
@@ -38,11 +42,8 @@ public class Operacion {
 	}
 
 	public String realizarValidacion(String nombre, String apellido){
-
 		resultado = "asd"+nombre+apellido;
-
 		return resultado;
-
 	}
 	
 }

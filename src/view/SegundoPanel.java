@@ -22,7 +22,6 @@ import javax.swing.JTextField;
 
 import java.awt.Image;
 
-
 public class SegundoPanel extends JPanel implements ActionListener {
 	
 
@@ -65,15 +64,9 @@ public class SegundoPanel extends JPanel implements ActionListener {
 
 	//String o Int
 	private String resultadoVista;
-
-
-
 	
 	public SegundoPanel() {
-
 		resultadoVista = " ";
-
-
 		setLayout(null);
 
 		fuente = new Font("Berlin Sans FB", Font.BOLD, 20);
@@ -167,13 +160,9 @@ public class SegundoPanel extends JPanel implements ActionListener {
 		resultado = new JLabel("Su resultado Es: ");
 		resultado.setBounds(8, 220, 200, 50);
 		add(resultado);
-
-		
-
 }
 
 	public void paintComponent(Graphics g) {
-		
 		super.paintComponent(g);//exception  controlan el entorno
 		g.setColor(Color.BLACK);//repintar la pantalla g
 		g.drawLine(5, 900, 120, 20);//linea g
@@ -187,19 +176,14 @@ public class SegundoPanel extends JPanel implements ActionListener {
 		} catch (Exception e) {
 			JOptionPane.showMessageDialog(null, "IMAGEN NO ENCONTRADA ");
 		}
-	g.drawImage(ImagenDos, 0, 0, null);//movemos imagen
-
-	
+		g.drawImage(ImagenDos, 0, 0, null);//movemos imagen
 	}
+
 	public void mostrarResultadoDos(String resultado) {
-		
-		resultadoVista = (resultado);
-		
-		
+		resultadoVista = (resultado);	
 	}
 
-
-	//Getter 
+	//Gets and Sets 
 	public CustomEvent getEvento() {
 		return evento;
 	}
@@ -208,21 +192,12 @@ public class SegundoPanel extends JPanel implements ActionListener {
 		this.evento = evento;
 	}
 
-	
-
-
-	
 	@Override
-	
 	public void actionPerformed(ActionEvent e) {
-		
-		
 		JOptionPane.showMessageDialog(null, "Click");
-		
 		PrimerPanel segundaPestaña = new PrimerPanel();
-
-         Pestana.add("Pestaña2", segundaPestaña);
-         Pestana.setSelectedComponent(segundaPestaña);
+        Pestana.add("Pestaña2", segundaPestaña);
+        Pestana.setSelectedComponent(segundaPestaña);
 		Pestana.setseleccion(segundaPestaña);
 	
 		String nombre = (contenidoNombre.getText());
@@ -232,21 +207,10 @@ public class SegundoPanel extends JPanel implements ActionListener {
 
 		contenidoNombre.setText(" ");
 		contenidoApellido.setText(" ");
-		
-
-
-
-		}
-
-		
-
-
-
-
-
-		// TODO Auto-generated method stub
-		
 	}
+
+		
+}
 
 	
 

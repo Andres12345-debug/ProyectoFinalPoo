@@ -35,32 +35,28 @@ public class IOManager extends JFrame implements CustomEventRespons {
 		setLocationRelativeTo(null);
 
 		pestanas = new JTabbedPane();
+
 		panelUno = new PrimerPanel();
 		((PrimerPanel)panelUno).setEvento(objetoControlador);
-		
-		panelDos = new SegundoPanel();
-		((SegundoPanel)panelDos).setEvento(objetoControlador);
-		panelTres= new TercerPanel();
-
-		panelCuatro = new CuartoPanel();
-
-		
 		pestanas.add("Log In", new PrimerPanel());
 		add(pestanas);
 
+		panelDos = new SegundoPanel();
+		((SegundoPanel)panelDos).setEvento(objetoControlador);
 		pestanas.add("ACCESO", new SegundoPanel());
-		add(pestanas);	
+		add(pestanas);
 
+		
+		panelTres= new TercerPanel();
+		//((TercerPanel)panelTres).setEvento(objetoControlador);
 		pestanas.add("TIENDA//QUIOSCO", new TercerPanel());
 		add(pestanas);
 
+		panelCuatro = new CuartoPanel();
+		//((CuartoPanel)panelCuatro).setEvento(objetoControlador);
 		pestanas.add("CIERRE CAJA", new CuartoPanel());
 		add(pestanas);
-
-
-
 	}
-
 
 	//Métodos propios
 	@Override
@@ -69,14 +65,17 @@ public class IOManager extends JFrame implements CustomEventRespons {
 		//System.out.println("El resultado de la suma está en la vista " + resultadoSuma);
 	}
 
-
 	@Override
 	public void respuestaPanelDos(String nombre, String apellido) {
-	//	((SegundoPanel)panelDos).mostrarResultadoDos(resultado);
 		// TODO Auto-generated method stub
 		
 	}
 
+	
+
+}
+
+
 
 	
 
@@ -84,7 +83,6 @@ public class IOManager extends JFrame implements CustomEventRespons {
 	
 
 
-	}
 
 
 

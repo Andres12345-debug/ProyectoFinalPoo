@@ -17,9 +17,17 @@ public class Controller implements CustomEvent{
 	
 	//Métodos propios
 	@Override
-	public void retornarLogIn(String usuario, String contraseña) {
-		Boolean resultadoLogIn = objetoOperaciones.validarDatos(usuario, contraseña);
+	public void retornarLogIn(String usuario, String contrasenia) {
+		System.out.println("Estoy en el controlador");
+		boolean resultadoLogIn = objetoOperaciones.validarDatos(usuario, contrasenia);
+		System.out.println(resultadoLogIn);
 		eventoRespuesta.respuestaResultadoLogIn(resultadoLogIn);
+	}
+
+	@Override
+	public void retornoImpresion(String nombre, String apellido) {
+		String resultadoImpresion = objetoOperaciones.realizarValidacion(nombre, apellido);
+		eventoRespuesta.respuestaPanelDos(resultadoImpresion, resultadoImpresion);
 	}
 
 	//Gets and Sets
@@ -30,15 +38,6 @@ public class Controller implements CustomEvent{
 	public void setEventoRespuesta(CustomEventRespons eventoRespuesta) {
 		this.eventoRespuesta = eventoRespuesta;
 	}
-	@Override
-	public void retornoImpresion(String nombre, String apellido) {
-		//int respuestaModelo = objetoOperaciones.realizarValidacion(String nombre, String apellido);
-		//eventoRespuesta.respuestaPanelDos(respuestaModelo);
-
-		// TODO Auto-generated method stub
-		
-	}
-
 
 	//Método main
 	public void init() {
@@ -46,5 +45,4 @@ public class Controller implements CustomEvent{
 		objetoIOManager.setVisible(true);
 	}
 
-	
 }
