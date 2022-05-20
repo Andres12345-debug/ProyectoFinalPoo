@@ -29,7 +29,8 @@ public class CuartoPanel extends JPanel implements ActionListener {
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);//exception  controlan el entorno
 		try {
-			ImagenDos = ImageIO.read(new File("C:\\Users\\Acer\\Desktop\\uni\\programacion\\Proyecto final\\cierreCaja.jpg"));
+			//ImagenDos = ImageIO.read(new File("C:\\Users\\Acer\\Desktop\\uni\\programacion\\Proyecto final\\cierreCaja.jpg"));
+			ImagenDos = ImageIO.read(new File("C:\\Users\\ivan\\Downloads\\CierreCaja.jpeg"));
 		} catch (Exception e) {
 			JOptionPane.showMessageDialog(null, "IMAGEN NO ENCONTRADA ");
 		}
@@ -42,12 +43,5 @@ public class CuartoPanel extends JPanel implements ActionListener {
         // TODO Auto-generated method stub
         
     }
-
-  
-   
-    
-
-    
-    
 
 }
