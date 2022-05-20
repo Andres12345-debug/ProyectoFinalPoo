@@ -42,9 +42,9 @@ public class Operacion {
 		return resultadoLogIn;
 	}
 
-	public String realizarValidacionRegistro(String nombre, String apellido){
-		mensajeInscripcion = nombre + apellido;
-		return mensajeInscripcion;
+	public String realizarValidacionRegistro(String nombre, String apellido, String sexo, String identificacion, int cantidadNinos, int cantidadAdultos) {
+		mensajeInscripcion = "Los datos del cliente registrado son: \nNombre: " + nombre + "\nApellido: " + apellido + "\nSexo: " + sexo + "\nIdentificacion: " + identificacion + "\nCantidad de manillas niños: " + cantidadNinos + "\nCantidad de manillas adultos: " + cantidadAdultos;
+		return mensajeInscripcion;	
 	}
 	
 }

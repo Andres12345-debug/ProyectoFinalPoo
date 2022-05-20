@@ -24,7 +24,6 @@ import java.awt.Image;
 
 public class SegundoPanel extends JPanel implements ActionListener {
 	
-
 	//JTabbet
 	private JTabbedPane pestana;
 
@@ -32,7 +31,7 @@ public class SegundoPanel extends JPanel implements ActionListener {
 	private JLabel etiquetaUno;
 	private JLabel etiquetaDos;
 	private JLabel etiquetaTitulo;
-	private JLabel  etiquetaSexo;
+	private JLabel etiquetaSexo;
 	private JLabel etiquetaIdenti;
 	private JLabel etiquetaNiños;
 	private JLabel etiquetaMayores;
@@ -49,13 +48,10 @@ public class SegundoPanel extends JPanel implements ActionListener {
 	private JTextField contenidoNombre;
 	private JTextField contenidoApellido;
 	private JTextField contenidoSexo;
-	private JTextField contenidoIndeti;
-
-
-	//variables ComboBox
-	private JComboBox comboUno;
-	private JComboBox comboDos;
-
+	private JTextField contenidoIdentificacion;
+	private JTextField contenidoManillasNinos;
+	private JTextField contenidoManillasAdultos;
+	
 	//variables para Boton
 	private JButton botonUno;
 
@@ -65,6 +61,7 @@ public class SegundoPanel extends JPanel implements ActionListener {
 	//String o Int
 	private String resultadoVista;
 	
+	//Método Constructor
 	public SegundoPanel() {
 		resultadoVista = " ";
 		setLayout(null);
@@ -79,75 +76,59 @@ public class SegundoPanel extends JPanel implements ActionListener {
 		add(etiquetaTitulo);
 
 		etiquetaUno = new JLabel("DIGITA TU NOMBRE");
-		etiquetaUno.setBounds(5, 60, 200, 50);
+		etiquetaUno.setBounds(50, 60, 200, 50);
 		etiquetaUno.setFont(fuenteDos);
 		add(etiquetaUno);
 
 		contenidoNombre = new JTextField("");
-		contenidoNombre.setBounds(190, 80, 100, 20);
+		contenidoNombre.setBounds(350, 80, 180, 20);
 		
 		add(contenidoNombre);
 
 		etiquetaDos = new JLabel("DIGITA TU APELLIDO");
-		etiquetaDos.setBounds(5, 30, 200, 200);
+		etiquetaDos.setBounds(50, 30, 200, 200);
 		etiquetaDos.setFont(fuenteDos);
 		add(etiquetaDos);
 
 		contenidoApellido = new JTextField();
-		contenidoApellido.setBounds(190,120,100,20);
+		contenidoApellido.setBounds(350, 120, 180, 20);
 		add(contenidoApellido);
 		
 		etiquetaSexo = new JLabel("DIGITA TU SEXO");
-		etiquetaSexo.setBounds(5, 70, 200, 200);
+		etiquetaSexo.setBounds(50, 70, 200, 200);
 		etiquetaSexo.setFont(fuenteDos);
 		add(etiquetaSexo);
 
 		contenidoSexo = new JTextField();
-		contenidoSexo.setBounds(190,160,100,20);
+		contenidoSexo.setBounds(350, 160, 180, 20);
 		add(contenidoSexo);
 
 		etiquetaIdenti = new JLabel("DIGITA TU IDENTIFICACION");
-		etiquetaIdenti.setBounds(5, 110, 200, 200);
+		etiquetaIdenti.setBounds(50, 110, 200, 200);
 		etiquetaIdenti.setFont(fuenteDos);
 		add(etiquetaIdenti);
 
-		contenidoIndeti = new JTextField();
-		contenidoIndeti.setBounds(190,200,100,20);
-		add(contenidoIndeti);
+		contenidoIdentificacion = new JTextField();
+		contenidoIdentificacion.setBounds(350, 200, 180, 20);
+		add(contenidoIdentificacion);
 
 		etiquetaNiños = new JLabel("CANTIDAD MANILLAS NIÑOS");
-		etiquetaNiños.setBounds(5,150,200,200);
+		etiquetaNiños.setBounds(50, 150, 280, 200);
 		etiquetaNiños.setFont(fuenteDos);
 		add(etiquetaNiños);
 
-        comboUno=new JComboBox<String>();
-		comboUno.setBounds(220,240,80,20);
-
-		comboUno.addItem("Seleccione");
-		comboUno.addItem("Una");
-		comboUno.addItem("Dos");
-		comboUno.addItem("Tres");
-		comboUno.addItem("Cuatro");
-		comboUno.addItem("Cinco");
-		comboUno.addActionListener(this);
-		add(comboUno);
+		contenidoManillasNinos = new JTextField();
+		contenidoManillasNinos.setBounds(350, 240, 180, 20);
+		add(contenidoManillasNinos);
 
 		etiquetaMayores = new JLabel("CANTIDAD MANILLAS MAYORES");
-		etiquetaMayores.setBounds(5,190,400,200);
+		etiquetaMayores.setBounds(50, 190, 400, 200);
 		etiquetaMayores.setFont(fuenteDos);
 		add(etiquetaMayores);
 
-		comboDos=new JComboBox<String>();
-		comboDos.setBounds(220,280,80,20);
-
-		comboDos.addItem("Seleccione");
-		comboDos.addItem("Una");
-		comboDos.addItem("Dos");
-		comboDos.addItem("Tres");
-		comboDos.addItem("Cuatro");
-		comboDos.addItem("Cinco");
-		comboDos.addActionListener(this);
-		add(comboDos);
+		contenidoManillasAdultos = new JTextField();
+		contenidoManillasAdultos.setBounds(350, 280, 180, 20);
+		add(contenidoManillasAdultos);
 
 		botonUno = new JButton("IMPRIMIR");
 		botonUno.setBackground(Color.cyan);
@@ -155,20 +136,20 @@ public class SegundoPanel extends JPanel implements ActionListener {
 		botonUno.setActionCommand("Primer Boton");
 		botonUno.addActionListener(this);
 		add(botonUno);
-		
-		//es una prueba
-		resultado = new JLabel("Su resultado Es: ");
-		resultado.setBounds(8, 220, 200, 50);
-		add(resultado);
-}
+	}
 
+	//Métodos Propios
+	public void mostrarResultadoRegistro(String resultadoImpresion) {
+		String resultadoVista = resultadoImpresion.toString();
+	}
+
+	//Gráficos de imagen
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);//exception  controlan el entorno
 		g.setColor(Color.BLACK);//repintar la pantalla g
 		g.drawLine(5, 900, 120, 20);//linea g
 		g.setColor(Color.yellow);
 		g.drawRect(30, 30, 100, 30);//rectangulo g 
-		
 		try {
 			//ImagenDos = ImageIO.read(new File("C:\\Users\\Acer\\Desktop\\uni\\programacion\\Proyecto final\\panelDos.jpg"));
 			ImagenDos = ImageIO.read(new File("C:\\Users\\ivan\\Downloads\\PanelDos.jpeg"));
@@ -177,10 +158,6 @@ public class SegundoPanel extends JPanel implements ActionListener {
 			JOptionPane.showMessageDialog(null, "IMAGEN NO ENCONTRADA ");
 		}
 		g.drawImage(ImagenDos, 0, 0, null);//movemos imagen
-	}
-
-	public void mostrarResultadoDos(String resultado) {
-		resultadoVista = (resultado);	
 	}
 
 	//Gets and Sets 
@@ -194,7 +171,7 @@ public class SegundoPanel extends JPanel implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		JOptionPane.showMessageDialog(null, "Click");
+		//JOptionPane.showMessageDialog(null, "Click");
 		PrimerPanel segundaPestaña = new PrimerPanel();
         Pestana.add("Pestaña2", segundaPestaña);
         Pestana.setSelectedComponent(segundaPestaña);
@@ -202,18 +179,21 @@ public class SegundoPanel extends JPanel implements ActionListener {
 	
 		String nombre = (contenidoNombre.getText());
 		String apellido =(contenidoApellido.getText());
-		evento.retornarImpresionPersonas(nombre, apellido);
-		resultado.setText(resultadoVista);
+		String sexo = (contenidoNombre.getText());
+		String identificacion = (contenidoApellido.getText());
+		int cantidadNinos = Integer.parseInt(contenidoManillasNinos.getText());
+		int cantidadAdultos = Integer.parseInt(contenidoManillasAdultos.getText());
+
+		evento.retornarImpresionPersonas(nombre, apellido, sexo, identificacion, cantidadNinos, cantidadAdultos);
 
 		contenidoNombre.setText(" ");
 		contenidoApellido.setText(" ");
+		contenidoSexo.setText(" ");
+		contenidoIdentificacion.setText(" ");
+		contenidoManillasNinos.setText(" ");
+		contenidoManillasAdultos.setText(" ");
 	}
-
-	public void mostrarResultadoRegistro(String nombre, String apellido) {
-		String resultadoVista = nombre.toString() + apellido.toString();;
-	}
-
-		
+	
 }
 
 	

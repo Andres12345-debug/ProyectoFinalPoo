@@ -72,8 +72,8 @@ public class IOManager extends JFrame implements CustomEventRespons {
 	}
 
 	@Override
-	public void respuestaRegistroPersonas(String nombre, String apellido) {
-		((SegundoPanel)panelDos).mostrarResultadoRegistro(nombre, apellido);
+	public void respuestaRegistroPersonas(String resultadoImpresion) {
+		((SegundoPanel)panelDos).mostrarResultadoRegistro(resultadoImpresion);
 		
 	}
 

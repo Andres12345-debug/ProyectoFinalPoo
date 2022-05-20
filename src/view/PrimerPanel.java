@@ -86,12 +86,9 @@ public class PrimerPanel extends JPanel implements ActionListener {
 		botonUno.addActionListener(this);
 		botonUno.setActionCommand("Primer Boton");//pa que haga alguna monda	
 		add(botonUno);
-		
-		resultado = new JLabel("Su resultado Es: ");
-		resultado.setBounds(8, 90, 200, 50);
-		add(resultado);	
 	}
 	
+	//Métodos propios
 	public void mostrarResultadoLogIn(Boolean resultadoLogIn) {
 		String resultadoVista = resultadoLogIn.toString();
 
