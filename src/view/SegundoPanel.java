@@ -36,11 +36,9 @@ public class SegundoPanel extends JPanel implements ActionListener {
 	private JLabel etiquetaIdenti;
 	private JLabel etiquetaNiños;
 	private JLabel etiquetaMayores;
-	private JLabel resultado;
  
 	private Image ImagenDos;
 
-	//variables fuentes
 	//Fuentes
 	private Font fuente;
 	private Font fuenteDos; 
@@ -49,7 +47,7 @@ public class SegundoPanel extends JPanel implements ActionListener {
 	private JTextField contenidoNombre;
 	private JTextField contenidoApellido;
 	private JTextField contenidoSexo;
-	private JTextField contenidoIndeti;
+	private JTextField contenidoIdentidicacion;
 
 
 	//variables ComboBox
@@ -111,9 +109,9 @@ public class SegundoPanel extends JPanel implements ActionListener {
 		etiquetaIdenti.setFont(fuenteDos);
 		add(etiquetaIdenti);
 
-		contenidoIndeti = new JTextField();
-		contenidoIndeti.setBounds(190,200,100,20);
-		add(contenidoIndeti);
+		contenidoIdentidicacion = new JTextField();
+		contenidoIdentidicacion.setBounds(190,200,100,20);
+		add(contenidoIdentidicacion);
 
 		etiquetaNiños = new JLabel("CANTIDAD MANILLAS NIÑOS");
 		etiquetaNiños.setBounds(5,150,200,200);
@@ -155,12 +153,7 @@ public class SegundoPanel extends JPanel implements ActionListener {
 		botonUno.setActionCommand("Primer Boton");
 		botonUno.addActionListener(this);
 		add(botonUno);
-		
-		//es una prueba
-		resultado = new JLabel("Su resultado Es: ");
-		resultado.setBounds(8, 220, 200, 50);
-		add(resultado);
-}
+	}
 
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);//exception  controlan el entorno
@@ -179,8 +172,8 @@ public class SegundoPanel extends JPanel implements ActionListener {
 		g.drawImage(ImagenDos, 0, 0, null);//movemos imagen
 	}
 
-	public void mostrarResultadoDos(String resultado) {
-		resultadoVista = (resultado);	
+	public void mostrarResultadoRegistro(String nombre, String apellido) {
+		String resultadoVista = nombre.toString() + " " + apellido.toString();
 	}
 
 	//Gets and Sets 
@@ -194,25 +187,20 @@ public class SegundoPanel extends JPanel implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		JOptionPane.showMessageDialog(null, "Click");
+		//JOptionPane.showMessageDialog(null, "Click");
 		PrimerPanel segundaPestaña = new PrimerPanel();
-        Pestana.add("Pestaña2", segundaPestaña);
+        Pestana.add("Factura de Registro: Personas", segundaPestaña);
         Pestana.setSelectedComponent(segundaPestaña);
 		Pestana.setseleccion(segundaPestaña);
 	
 		String nombre = (contenidoNombre.getText());
 		String apellido =(contenidoApellido.getText());
 		evento.retornarImpresionPersonas(nombre, apellido);
-		resultado.setText(resultadoVista);
+		//resultado.setText(resultadoVista);
 
 		contenidoNombre.setText(" ");
 		contenidoApellido.setText(" ");
 	}
-
-	public void mostrarResultadoRegistro(String nombre, String apellido) {
-		String resultadoVista = nombre.toString() + apellido.toString();;
-	}
-
 		
 }
 

@@ -86,10 +86,6 @@ public class PrimerPanel extends JPanel implements ActionListener {
 		botonUno.addActionListener(this);
 		botonUno.setActionCommand("Primer Boton");//pa que haga alguna monda	
 		add(botonUno);
-		
-		resultado = new JLabel("Su resultado Es: ");
-		resultado.setBounds(8, 90, 200, 50);
-		add(resultado);	
 	}
 	
 	public void mostrarResultadoLogIn(Boolean resultadoLogIn) {
@@ -126,7 +122,7 @@ public class PrimerPanel extends JPanel implements ActionListener {
 			String datosContraseña = contenidoClaveAdmin.getText();
 			
 			evento.retornarLogIn(datosUsuario, datosContraseña);
-			JOptionPane.showMessageDialog(null, "Has ingresado a nuestro sistema.");
+			//JOptionPane.showMessageDialog(null, "Has ingresado a nuestro sistema.");
 			contenidoPreguntaAdmin.setText(" ");
 			contenidoClaveAdmin.setText(" ");
 		}
