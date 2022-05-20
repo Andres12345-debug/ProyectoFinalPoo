@@ -39,7 +39,7 @@ public class Operacion {
 
 	public String realizarValidacion(String nombre, String apellido){
 
-		resultado = "asd"+nombre+apellido;
+		resultado = "prueba funciona"+nombre+apellido;
 
 		return resultado;
 

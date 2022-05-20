@@ -16,7 +16,7 @@ public class Pestana extends JPanel{
     }
     public void seleccion(){
         setLayout(null);
-        JOptionPane.showMessageDialog(null, "LOLA");
+        
 
 
 

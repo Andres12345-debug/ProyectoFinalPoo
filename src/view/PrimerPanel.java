@@ -88,7 +88,7 @@ public class PrimerPanel extends JPanel implements ActionListener {
 		add(botonUno);
 		
 		resultado = new JLabel("Su resultado Es: ");
-		resultado.setBounds(8, 90, 200, 50);
+		resultado.setBounds(48, 90, 200, 50);
 		add(resultado);	
 	}
 	
@@ -117,6 +117,8 @@ public class PrimerPanel extends JPanel implements ActionListener {
 		this.evento = evento;
 	}
 
+	//asd
+	//asd
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {

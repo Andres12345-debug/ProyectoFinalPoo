@@ -71,11 +71,15 @@ public class IOManager extends JFrame implements CustomEventRespons {
 
 
 	@Override
-	public void respuestaPanelDos(String nombre, String apellido) {
-	//	((SegundoPanel)panelDos).mostrarResultadoDos(resultado);
+	public void respuestaPanelDos(String resultado) {
+		((SegundoPanel)panelDos).mostrarResultadoDos(resultado);
+	
 		// TODO Auto-generated method stub
 		
 	}
+
+
+	
 
 
 	

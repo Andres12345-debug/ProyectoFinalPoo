@@ -165,7 +165,7 @@ public class SegundoPanel extends JPanel implements ActionListener {
 		
 		//es una prueba
 		resultado = new JLabel("Su resultado Es: ");
-		resultado.setBounds(8, 220, 200, 50);
+		resultado.setBounds(188, 220, 200, 50);
 		add(resultado);
 
 		
@@ -228,10 +228,12 @@ public class SegundoPanel extends JPanel implements ActionListener {
          Pestana.setSelectedComponent(segundaPestaña);
 		Pestana.setseleccion(segundaPestaña);
 	
+		
 		String nombre = (contenidoNombre.getText());
 		String apellido =(contenidoApellido.getText());
 		evento.retornoImpresion(nombre, apellido);
 		resultado.setText(resultadoVista);
+		resultado.enable();
 
 		contenidoNombre.setText(" ");
 		contenidoApellido.setText(" ");

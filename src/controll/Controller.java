@@ -32,8 +32,8 @@ public class Controller implements CustomEvent{
 	}
 	@Override
 	public void retornoImpresion(String nombre, String apellido) {
-		//int respuestaModelo = objetoOperaciones.realizarValidacion(String nombre, String apellido);
-		//eventoRespuesta.respuestaPanelDos(respuestaModelo);
+		String respuestaModelo = objetoOperaciones.realizarValidacion(nombre, apellido);
+		eventoRespuesta.respuestaPanelDos(respuestaModelo);
 
 		// TODO Auto-generated method stub
 		
